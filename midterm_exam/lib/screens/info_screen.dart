@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
 class InfoScreen extends StatelessWidget {
+  const InfoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('What is BMI?'),
+        title: const Text(
+          'What is BMI?',
+          style: TextStyle(
+            color:
+                Color.fromARGB(255, 255, 255, 255), // Set the text color here
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 6, 34, 47),
       ),
-      body: Center(
+      body: const Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
