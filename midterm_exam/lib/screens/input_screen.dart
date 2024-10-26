@@ -14,7 +14,7 @@ class InputScreen extends StatelessWidget {
                 Color.fromARGB(255, 255, 255, 255), // Set the text color here
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 6, 34, 47),
+        backgroundColor: const Color.fromARGB(255, 6, 34, 47),
       ),
       body: Center(
         // Center widget to place the Column in the middle of the screen
@@ -24,6 +24,11 @@ class InputScreen extends StatelessWidget {
             mainAxisAlignment:
                 MainAxisAlignment.center, // Center items within the Column
             children: <Widget>[
+              const Text(
+                'Enter your Height and Weight',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
               const TextField(
                 decoration: InputDecoration(
                   labelText: 'Height (cm)',

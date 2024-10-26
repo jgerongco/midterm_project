@@ -22,7 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Color.fromARGB(255, 255, 255, 255), // Set the text color here
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 6, 34, 47),
+        backgroundColor: const Color.fromARGB(255, 6, 34, 47),
       ),
       body: SettingsList(
         sections: [
@@ -52,6 +52,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 initialValue: darkModeEnabled,
                 leading: const Icon(Icons.dark_mode),
                 title: const Text('Enable Dark Mode'),
+              ),
+            ],
+          ),
+          SettingsSection(
+            title: const Text(
+              'About',
+              style: TextStyle(
+                color:
+                    Color.fromARGB(255, 14, 14, 14), // Set the text color here
+              ),
+            ),
+            tiles: <SettingsTile>[
+              SettingsTile(
+                title: const Text('Version'),
+                description: const Text('1.0.0'),
+                leading: const Icon(Icons.info),
+              ),
+              SettingsTile.navigation(
+                title: const Text('Privacy Policy'),
+                leading: const Icon(Icons.privacy_tip),
+                onPressed: (context) {
+                  // Open privacy policy page
+                },
+              ),
+              SettingsTile.navigation(
+                leading: const Icon(Icons.file_copy),
+                title: const Text('Terms of Service'),
+                onPressed: (context) {
+                  // Navigate to terms of service
+                },
               ),
             ],
           ),

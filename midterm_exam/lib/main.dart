@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:midterm_exam/screens/history_screen.dart';
+import 'screens/history_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/input_screen.dart';
 import 'screens/result_screen.dart';
