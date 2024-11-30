@@ -1,40 +1,47 @@
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  final double bmi;
+
+  const ResultScreen({super.key, required this.bmi});
 
   @override
   Widget build(BuildContext context) {
+    String getBmiCategory(double bmi) {
+      if (bmi < 18.5) return 'Underweight';
+      if (bmi < 24.9) return 'Normal';
+      if (bmi < 29.9) return 'Overweight';
+      return 'Obese';
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Your BMI Result',
-          style: TextStyle(
-            color:
-                Color.fromARGB(255, 255, 255, 255), // Set the text color here
-          ),
+          'BMI Result',
+          style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color.fromARGB(255, 6, 34, 47),
-        iconTheme: const IconThemeData(
-          color: Colors.white, // Set the back arrow color here
-        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'BMI Result will be shown here',
-              style: TextStyle(fontSize: 24),
+          children: [
+            Text(
+              'Your BMI: ${bmi.toStringAsFixed(2)}',
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     Navigator.popUntil(
-            //         context, ModalRoute.withName('/screens/home_screen'));
-            //   },
-            //   child: const Text('Go Back to Home'),
-            // ),
+            const SizedBox(height: 16),
+            Text(
+              'Category: ${getBmiCategory(bmi)}',
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 32),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Back'),
+            ),
           ],
         ),
       ),

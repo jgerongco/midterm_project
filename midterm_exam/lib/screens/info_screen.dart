@@ -14,7 +14,7 @@ class InfoScreen extends StatelessWidget {
                 Color.fromARGB(255, 255, 255, 255), // Set the text color here
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 6, 34, 47),
+        backgroundColor: const Color.fromARGB(255, 6, 34, 47),
       ),
       body: const Center(
         child: Padding(

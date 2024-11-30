@@ -14,16 +14,16 @@ class HomeScreen extends StatelessWidget {
                 Color.fromARGB(255, 255, 255, 255), // Set the text color here
           ),
         ),
-        backgroundColor: Color.fromARGB(
+        backgroundColor: const Color.fromARGB(
             255, 6, 34, 47), // Set the AppBar background color here
       ),
-      backgroundColor: Color.fromARGB(
+      backgroundColor: const Color.fromARGB(
           255, 249, 249, 249), // Set the Scaffold background color here
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'Welcome to BMI Calculator!',
               style: TextStyle(
                 fontSize: 24,
@@ -41,6 +41,8 @@ class HomeScreen extends StatelessWidget {
 
 // Info section for BMI explanation and FAQ
 class BmiInfoSection extends StatefulWidget {
+  const BmiInfoSection({super.key});
+
   @override
   _BmiInfoSectionState createState() => _BmiInfoSectionState();
 }
@@ -56,25 +58,25 @@ class _BmiInfoSectionState extends State<BmiInfoSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Title for the Info Section
-          Text(
+          const Text(
             'What is BMI?',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(255, 0, 0, 0),
+              color: Color.fromARGB(255, 0, 0, 0),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           // Description Text
-          Text(
+          const Text(
             'BMI (Body Mass Index) is a measure that uses your height and weight to estimate if you’re within a healthy weight range. '
             'It helps identify if you’re underweight, normal weight, overweight, or obese.',
             style: TextStyle(fontSize: 16, color: Colors.black54),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           // FAQ Expansion Tile
           ExpansionTile(
-            title: Text(
+            title: const Text(
               'Frequently Asked Questions',
               style: TextStyle(
                 fontSize: 18,
@@ -86,7 +88,7 @@ class _BmiInfoSectionState extends State<BmiInfoSection> {
             onExpansionChanged: (bool expanded) {
               setState(() => _isFaqExpanded = expanded);
             },
-            children: <Widget>[
+            children: const <Widget>[
               ListTile(
                 title: Text(
                   'Is BMI accurate?',
